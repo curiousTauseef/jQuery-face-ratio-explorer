@@ -1,3 +1,3 @@
-# Lift Experiments - Face optimization
+# Lift experiments - face feature space explorer
 
-Demo: https://rawgit.com/robinvanemden/lift-face-experiment/master/index.html
+See: https://rawgit.com/robinvanemden/lift-face-experiment/master/index.html
