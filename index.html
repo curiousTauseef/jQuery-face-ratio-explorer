@@ -63,12 +63,12 @@
         $("#H").slider();
         var h = $("#h").slider({
             tooltip_position: "bottom"
-        }).on("slide", sliderChange).data("slider");
+        }).on("slide slideStop", sliderChange).data("slider");
         var v = $("#v").slider({
             formatter: function(value) {
                 return value + 1;
             }
-        }).on("slide", sliderChange).data("slider");
+        }).on("slide slideStop", sliderChange).data("slider");
 
         $("#reset").click(function() {
             $("#h").val(5);
