@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-type="example" data-id="sequence-multi-row">
+
+<head>
+
+    <title>Lift Experiments - Face feature space explorer</title>
+
+    <meta charset="utf-8" content="text/html" http-equiv="Content-type" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/nopadding.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.reel-min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-slider.min.js" type="text/javascript"></script>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+	<img src="images/055.png" width="400" height="400" class="reel" id="image" />
+
+    <input id="v" type="text" 
+			data-slider-id="vslider" 
+			data-slider-tooltip="hide"
+			data-slider-min="0" 
+			data-slider-max="9" 
+			data-slider-step="1" 
+			data-slider-value="5" 
+			data-slider-orientation="vertical" />
+
+    <input id="h" type="text" 
+			data-slider-id="hslider" 
+			data-slider-tooltip="hide" 
+			data-slider-min="1" 
+			data-slider-max="10" 
+			data-slider-step="1" 
+			data-slider-value="5" />
+
+    <button id="reset" class="btn btn-primary" type="submit">Reset</button>
+
+    <script type="text/javascript">
+
+        $("#image").reel({
+            images: "images/###.png|001..100",
+            loops: false,
+            frames: 10,
+            frame: 55,
+            rows: 10,
+            row: 1,
+            speed: 0,
+            draggable: false
+        })
+
+        var sliderChange = function() {
+            $("#image").reel("frame", h.getValue() + 10 * v.getValue());
+        };
+
+        $("#H").slider();
+        var h = $("#h").slider({
+            tooltip_position: "bottom"
+        }).on("slide slideStop", sliderChange).data("slider");
+        var v = $("#v").slider({
+            formatter: function(value) {
+                return value + 1;
+            }
+        }).on("slide slideStop", sliderChange).data("slider");
+
+        $("#reset").click(function() {
+            $("#h").val(5);
+            $("#v").val(6);
+            $("#h").slider("refresh");
+            $("#v").slider("refresh");
+            sliderChange();
+        });
+
+    </script>
+
+</html>
