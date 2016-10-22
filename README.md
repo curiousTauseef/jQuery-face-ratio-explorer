@@ -7,7 +7,7 @@ Blog: http://pavlov.tech/2016/10/21/facial-aspect-ratio-explorer/
 ![alt tag](http://pavlov.tech/wp-content/uploads/2016/10/faceexplorer2.png)
 
 
-Makes use of the following JavaScript libraries:
+built with the following jQuery libraries:
 
     jQuery Reel
     Bootstrap Slider
