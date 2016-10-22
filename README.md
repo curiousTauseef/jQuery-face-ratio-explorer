@@ -1,4 +1,4 @@
-# Lift experiments - face feature space explorer
+# LiF experiments - face feature space explorer
 
 Demo: https://rawgit.com/robinvanemden/jQuery-face-ratio-explorer/master/index.html
 
